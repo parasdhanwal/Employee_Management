@@ -1,0 +1,48 @@
+{%extends 'basic.html'%}
+{% block title %}Add {% endblock %}
+{% block content %}
+<form method='POST' action="/add_emp">
+  {%csrf_token%}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="first_name">First name</label>
+      <input type="text" class="form-control" name="first_name"id="first_name" value="{{first_name}}" placeholder="First Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="last_name">Last name</label>
+      <input type="text" class="form-control" name="last_name"id="last_name" value="{{last_name}}" placeholder="Last Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="salary">Salary</label>
+      <input type="text" class="form-control" name="salary"id="salary"value="{{salary}}" placeholder="salary">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="bonus">Bonus</label>
+      <input type="text" class="form-control" name="bonus"id="bonus" value="{{bonus}}" placeholder="bonus">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="dept">Department</label>
+      <input type="text" class="form-control" name="dept" id="dept" value="{{dept}}" placeholder="department">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="role">Role</label>
+      <input type="text" class="form-control" name="role" id="role" value="{{role}}" placeholder="role">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="phone">Phone Number</label>
+      <input type="text" class="form-control" name="phone" id="phone" value="{{phone}}" placeholder="phone">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Employee</button>
+</form>
+{% endblock %}
